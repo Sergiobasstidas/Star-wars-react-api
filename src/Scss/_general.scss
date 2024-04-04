@@ -1,0 +1,255 @@
+//General
+.container {
+  margin: 0;
+  padding: 0 15px;
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.logo {
+  margin: 30px 0 60px 0;
+  height: 100px;
+}
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img {
+  text-align: center;
+  margin: 30px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--medium);
+}
+.hover {
+  transition: 0.2s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.gold-text {
+  color: #ffe81f;
+}
+.text {
+  color: var(--gold-starwars);
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+.flex {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+.container-tarjeta {
+  margin: 0 25%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+}
+.container-residentes {
+  margin: 30px 25% 100px 25%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: auto;
+}
+.text-residentes {
+  padding: 0 0 20px 0;
+}
+
+.img-sm {
+  text-align: center;
+  margin: 30px 20px 0 20px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--medium);
+}
+.titlo-residentes {
+  margin: 0;
+  font-size: 30px;
+  margin: 20px 0 0 0;
+}
+//------------------------------------------------
+
+//PERSONAJES
+.container-personaje {
+  margin: 0 25%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  height: 448px;
+  overflow: hidden;
+}
+.info-text {
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 0 0 10%;
+  height: 100%;
+}
+.info-text span {
+  margin: 5px 0;
+}
+.personaje-image {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  display: block;
+  min-height: 423px;
+}
+
+.text-personajes {
+  color: var(--jedi-color);
+}
+//------------------------------------------------
+
+//Landing
+.sin-estilos {
+  text-decoration: none;
+  color: var(--golden-starwars);
+}
+.img-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+.img-wrapper:hover .img {
+  opacity: 0.2;
+}
+.img-wrapper:hover .hover {
+  opacity: 2;
+}
+.text-planetas {
+  color: var(--planet-color);
+}
+.text-naves {
+  color: var(--ships-color);
+}
+.grid {
+  display: grid;
+  &--gap {
+    @include small {
+      grid-gap: 15px;
+    }
+  }
+  &--columns {
+    @include small {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include medium {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+//------------------------------------------------
+
+// Fondo Estrellado
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-webkit-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-moz-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-ms-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+.stars,
+.twinkling {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1;
+}
+.stars {
+  background: #000
+    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
+    center;
+}
+.twinkling {
+  background: transparent
+    url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat
+    top center;
+  -moz-animation: move-twink-back 200s linear infinite;
+  -ms-animation: move-twink-back 200s linear infinite;
+  -o-animation: move-twink-back 200s linear infinite;
+  -webkit-animation: move-twink-back 200s linear infinite;
+  animation: move-twink-back 200s linear infinite;
+}
+//-----------------------------------------------------------
+
+//PAGINATOR
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--golden-starwars);
+}
+
+.previous-link,
+.next-link {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.previous-link:hover,
+.next-link:hover,
+.page-link:hover {
+  color: var(--gold-starwars);
+}
+//------------------------------------------------------------
